@@ -15,7 +15,7 @@ class PemesananController extends Controller
     public function index()
     {
         //
-        $data = Pemesanan::all();
+        $data = Pemesanan::with(["kendaraan", "user"])->get();
         return response()->json($data);
     }
 

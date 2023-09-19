@@ -9,7 +9,9 @@ class Kendaraan extends Model
 {
     use HasFactory;
 
-    protected $table = "kendaraan";
+    protected $table = "tb_kendaraan";
+
+    protected $primaryKey = "id_kendaraan";
 
     protected $fillable = [
         "nama_kendaraan",

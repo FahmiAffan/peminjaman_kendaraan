@@ -25,7 +25,7 @@ return new class extends Migration
         });
         Schema::table('pemesanan', function ($table) {
             $table->foreign("id_user")->references("id_user")->on("user")->onDelete("cascade")->onUpdate("cascade");
-            $table->foreign("id_kendaraan")->references("id_kendaraan")->on("kendaraan")->onDelete("cascade")->onUpdate("cascade");
+            $table->foreign("id_kendaraan")->references("id_kendaraan")->on("tb_kendaraan")->onDelete("cascade")->onUpdate("cascade");
         });
     }
 
