@@ -54,8 +54,8 @@
         <v-divider></v-divider>
 
         <div v-if="logedIn == true">
-          <div v-if="user.role == 'kasir'">
-            <v-list dense nav v-for="s in KasirSideBarList" :key="s">
+          <div v-if="user.role == 'client'">
+            <v-list dense nav v-for="s in ClientSideBarList" :key="s">
               <v-list-item link :to="s.link">
                 <v-list-item-icon>
                   <v-icon>{{ s.icon }}</v-icon>

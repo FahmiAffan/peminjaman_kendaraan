@@ -1,7 +1,9 @@
 <template>
   <div>
     <SideBarVue />
-    <v-btn color="green" @click="print" class="white--text">Expor Excel</v-btn>
+    <v-btn color="green" @click="print" class="white--text ma-5"
+      >Expor Excel</v-btn
+    >
     <v-simple-table>
       <template v-slot:default>
         <thead>
