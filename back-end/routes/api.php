@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\API\AuthController;
+use App\Http\Controllers\ExportController;
 use App\Http\Controllers\KendaraanController;
 use App\Http\Controllers\PemesananController;
 use Illuminate\Http\Request;
@@ -31,3 +32,8 @@ Route::post('/login', [AuthController::class, "login"]);
 //Data
 Route::resource('/kendaraan', KendaraanController::class);
 Route::resource('/pemesanan', PemesananController::class);
+
+
+Route::put('/updatePersetujuan/{id}', [PemesananController::class, "updatePersetujuan"]);
+
+Route::get('/export', [ExportController::class, "export"]);

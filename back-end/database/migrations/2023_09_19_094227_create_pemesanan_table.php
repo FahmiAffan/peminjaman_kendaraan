@@ -16,8 +16,9 @@ return new class extends Migration
         Schema::create('pemesanan', function (Blueprint $table) {
             $table->id("id_pemesanan");
             $table->string("driver");
+            $table->integer("konsumsi_bbm");
             $table->enum("persetujuan_admin", ['setuju', 'tidak_setuju']);
-            $table->enum("persetujuan_pihak", ['setuju', 'tidak_setuju']);
+            $table->enum("persetujuan_pihak", ['setuju', 'tidak_setuju', 'menunggu']);
             $table->unsignedBigInteger("id_user");
             $table->unsignedBigInteger("id_kendaraan");
             $table->timestamps();

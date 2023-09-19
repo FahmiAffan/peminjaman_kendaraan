@@ -13,6 +13,7 @@ class Pemesanan extends Model
 
     protected $fillable = [
         "driver",
+        "konsumsi_bbm",
         "persetujuan_admin",
         "persetujuan_pihak",
         "id_user",

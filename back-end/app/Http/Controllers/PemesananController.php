@@ -42,6 +42,7 @@ class PemesananController extends Controller
         $data = Pemesanan::create(
             [
                 "driver" => $request->driver,
+                "konsumsi_bbm" => $request->konsumsi_bbm,
                 "persetujuan_admin" => $request->persetujuan_admin,
                 "persetujuan_pihak" => $request->persetujuan_pihak,
                 "id_user" => $request->id_user,
@@ -83,8 +84,9 @@ class PemesananController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $data = Pemesanan::where("id_kendaraan", "=", $id)->update([
+        $data = Pemesanan::where("id_pemesanan", "=", $id)->update([
             "driver" => $request->driver,
+            "konsumsi_bbm" => $request->konsumsi_bbm,
             "persetujuan_admin" => $request->persetujuan_admin,
             "persetujuan_pihak" => $request->persetujuan_pihak,
             "id_user" => $request->id_user,
@@ -113,5 +115,22 @@ class PemesananController extends Controller
             Pemesanan::where("id_pemesanan", "=", $id)->delete();
         }
         return response()->json("Data Berhasil Dihapus");
+    }
+
+
+    public function updatePersetujuan(Request $request, $id)
+    {
+        //
+        $data = Pemesanan::where("id_pemesanan", "=", $id)->update([
+            "persetujuan_admin" => $request->persetujuan_admin,
+            "persetujuan_pihak" => $request->persetujuan_pihak,
+        ]);
+        return response()->json(
+            [
+                "data" => $data,
+                "id" => $id,
+                "success" => true
+            ]
+        );
     }
 }
